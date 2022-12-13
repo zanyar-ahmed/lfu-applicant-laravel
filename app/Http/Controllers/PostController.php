@@ -33,7 +33,7 @@ class PostController extends Controller
  
     public function store(Request $request)
     {
-        $this->validate($request, [
+      /*  $this->validate($request, [
             'title' => 'required',
             'description' => 'required'
         ]);
@@ -52,7 +52,11 @@ class PostController extends Controller
                 'success' => false,
                 'message' => 'Post not added'
             ], 500);
+            */
     }
+
+
+    
  
     public function update(Request $request, $id)
     {
