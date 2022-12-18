@@ -46,10 +46,18 @@ class ApplicantController extends Controller
             'date' => 'required',
             'grad' => 'required',
         ]);
-        
+        $post = Applicant::create($request->all());
+
+        return response()->json([
+            'status' => true,
+            'message' => "Post Created successfully!",
+            'post' => $post
+        ], 200);
         
       
-       return Applicant::create($request->all());
+
+
+       
     }
 
 
