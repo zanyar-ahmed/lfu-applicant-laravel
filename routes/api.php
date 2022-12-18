@@ -21,7 +21,7 @@ Route::post('login', [PassportAuthController::class, 'login']);
 //Route::post('posts', [PostController::class, 'store']);
 Route::post('addapplicant',  [ApplicantController::class, 'store']);
 Route::get('getapplicant',  [ApplicantController::class, 'index']);
-Route::get('getdepartment',  [ApplicantController::class, 'index']);
+Route::post('adddepartment',  [DepartmentController::class, 'store']);
 
 //Route::post('addapplicant',  [PostController::class, 'store']);
 Route::resource('posts', PostController::class);
