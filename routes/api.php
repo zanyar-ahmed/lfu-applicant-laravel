@@ -19,6 +19,7 @@ Route::post('register', [PassportAuthController::class, 'register']);
 Route::post('login', [PassportAuthController::class, 'login']);
 //Route::post('posts', [PostController::class, 'store']);
 Route::post('addapplicant',  [ApplicantController::class, 'store']);
+Route::get('getapplicant',  [ApplicantController::class, 'index']);
 //Route::post('addapplicant',  [PostController::class, 'store']);
 Route::resource('posts', PostController::class);
 Route::middleware('auth:api')->group(function () {

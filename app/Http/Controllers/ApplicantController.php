@@ -14,7 +14,13 @@ class ApplicantController extends Controller
      */
     public function index()
     {
-        //
+        
+        $posts = Applicant::all();
+
+        return response()->json([
+            'status' => true,
+            'posts' => $posts
+        ]);
     }
 
     /**
@@ -50,7 +56,7 @@ class ApplicantController extends Controller
 
         return response()->json([
             'status' => true,
-            'message' => "Post Created successfully!",
+            'message' => "Applicant Created successfully!",
             'post' => $post
         ], 200);
         
@@ -93,7 +99,24 @@ class ApplicantController extends Controller
      */
     public function update(Request $request, Applicant $applicant)
     {
-        //
+        $request->validate([
+            'fullName' => 'required',
+            'email' => 'required',
+            'dep' => 'required',
+            'graduYear' => 'required',
+            'placeTo' => 'required',
+            'lang' => 'required',
+            'date' => 'required',
+            'grad' => 'required',
+        ]);
+        $applicant->update($request->all());
+//        $post = Applicant::create($request->all());
+
+        return response()->json([
+            'status' => true,
+            'message' => "Post Updated successfully!",
+            'post' => $applicant
+        ], 200);
     }
 
     /**
@@ -104,6 +127,12 @@ class ApplicantController extends Controller
      */
     public function destroy(Applicant $applicant)
     {
+        $applicant->delete();
+
+        return response()->json([
+            'status' => true,
+            'message' => "Post Deleted successfully!",
+        ], 200);
         //
     }
 }
