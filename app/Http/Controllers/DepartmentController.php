@@ -15,7 +15,7 @@ class DepartmentController extends Controller
      */
     public function index()
     {
-        //
+        
     }
 
     /**
@@ -36,7 +36,21 @@ class DepartmentController extends Controller
      */
     public function store(StoredepartmentRequest $request)
     {
-        //
+        $request->validate([
+            'title' => 'required',
+        
+        ]);
+ 
+        $post = department::create($request->all());
+
+        return response()->json([
+            'status' => true,
+            'message' => "department Created successfully!",
+            'post' => $post
+        ], 200);
+        
+      
+
     }
 
     /**

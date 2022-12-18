@@ -110,7 +110,6 @@ class ApplicantController extends Controller
             'grad' => 'required',
         ]);
         $applicant->update($request->all());
-//        $post = Applicant::create($request->all());
 
         return response()->json([
             'status' => true,
