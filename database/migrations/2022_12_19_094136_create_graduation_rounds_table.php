@@ -13,12 +13,12 @@ class CreateGraduationRoundsTable extends Migration
      */
     public function up()
     {
-        Schema::create('graduationRound', function (Blueprint $table) {
+        Schema::create('graduation_rounds', function (Blueprint $table) {
             $table->id();
             $table->string('from');
             $table->string('to');
-            $table->timestamps();          
-});
+            $table->timestamps();  
+        });
     }
 
     /**

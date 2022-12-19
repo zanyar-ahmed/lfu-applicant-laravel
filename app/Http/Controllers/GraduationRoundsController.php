@@ -2,11 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\department;
-use App\Http\Requests\StoredepartmentRequest;
-use App\Http\Requests\UpdatedepartmentRequest;
+use App\Models\GraduationRounds;
+use Illuminate\Http\Request;
 
-class DepartmentController extends Controller
+class GraduationRoundsController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -16,6 +15,14 @@ class DepartmentController extends Controller
     public function index()
     {
         
+        $posts = GraduationRounds::all();
+
+        return response()->json([
+            'status' => true,
+            'posts' => $posts
+        ]);  
+        //
+        //
     }
 
     /**
@@ -31,35 +38,34 @@ class DepartmentController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \App\Http\Requests\StoredepartmentRequest  $request
+     * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(StoredepartmentRequest $request)
+    public function store(Request $request)
     {
+        //'from', 'to',
         $request->validate([
-            'title' => 'required',
-        
+            'from' => 'required',
+            'to' => 'required',
         ]);
- 
-        $post = department::create($request->all());
+
+        $post = GraduationRounds::create($request->all());
 
         return response()->json([
             'status' => true,
             'message' => "department Created successfully!",
             'post' => $post
         ], 200);
-        
-      
-
+        //
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\department  $department
+     * @param  \App\Models\GraduationRounds  $graduationRounds
      * @return \Illuminate\Http\Response
      */
-    public function show(department $department)
+    public function show(GraduationRounds $graduationRounds)
     {
         //
     }
@@ -67,10 +73,10 @@ class DepartmentController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\department  $department
+     * @param  \App\Models\GraduationRounds  $graduationRounds
      * @return \Illuminate\Http\Response
      */
-    public function edit(department $department)
+    public function edit(GraduationRounds $graduationRounds)
     {
         //
     }
@@ -78,11 +84,11 @@ class DepartmentController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \App\Http\Requests\UpdatedepartmentRequest  $request
-     * @param  \App\Models\department  $department
+     * @param  \Illuminate\Http\Request  $request
+     * @param  \App\Models\GraduationRounds  $graduationRounds
      * @return \Illuminate\Http\Response
      */
-    public function update(UpdatedepartmentRequest $request, department $department)
+    public function update(Request $request, GraduationRounds $graduationRounds)
     {
         //
     }
@@ -90,10 +96,10 @@ class DepartmentController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\department  $department
+     * @param  \App\Models\GraduationRounds  $graduationRounds
      * @return \Illuminate\Http\Response
      */
-    public function destroy(department $department)
+    public function destroy(GraduationRounds $graduationRounds)
     {
         //
     }
