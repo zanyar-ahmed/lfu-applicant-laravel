@@ -18,7 +18,7 @@ class ApplicantController extends Controller
     public function index()
     {
         
-        $posts = Applicant::all();
+        $posts = Applicant::paginate(15);
 
         return response()->json([
             'status' => true,

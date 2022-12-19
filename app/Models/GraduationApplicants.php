@@ -23,4 +23,7 @@ class GraduationApplicants extends Model
       'grad',
     ];
 
+
+
+
 }

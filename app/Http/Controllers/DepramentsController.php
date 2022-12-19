@@ -16,7 +16,7 @@ class DepramentsController extends Controller
     {
         
   
-        $posts = depraments::all();
+        $posts = depraments::paginate(15);
 
         return response()->json([
             'status' => true,

@@ -15,7 +15,7 @@ class GraduwationRequirementController extends Controller
     public function index()
     {
         
-        $posts = graduwationRequirement::all();
+        $posts = graduwationRequirement::paginate(15);
 
         return response()->json([
             'status' => true,

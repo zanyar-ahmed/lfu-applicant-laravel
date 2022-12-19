@@ -16,7 +16,10 @@ class GraduationApplicantsController extends Controller
     public function index()
     {
          
-        $posts = GraduationApplicants::all();
+
+      //  $users = User::paginate(15);
+
+        $posts = GraduationApplicants::paginate(15);
 
         return response()->json([
             'status' => true,
@@ -44,23 +47,22 @@ class GraduationApplicantsController extends Controller
     public function store(Request $request)
     {
 
-        // $request->validate([
-        //     'title' => 'required',
-        //    'fullNameEng'=> 'required',
-        //    'fullNameKu'=> 'required',
-        //     'email'=> 'required',
-        //     'dep'=> 'required',
-        //     'graduwation'=> 'required',
-        //     'phoneNumber'=> 'required',
-        //     'graduYear'=> 'required',
-        //     'placeTo'=> 'required',
-        //     'lang'=> 'required',
-        //     'date'=> 'required',
-        //     'require'=> 'required',
-        //     'grad'=> 'required',
-        // ]);
-       
-
+        $request->validate([
+     
+             'fullNameKu'=> 'required',
+           'fullNameEng'=> 'required',
+            'email'=> 'required',
+            'dep'=> 'required',
+            'graduwation'=> 'required',
+            'phoneNumber'=> 'required',
+            'graduYear'=> 'required',
+            'placeTo'=> 'required',
+            'lang'=> 'required',
+            'date'=> 'required',
+            'require'=> 'required',
+            'grad'=> 'required',
+        ]);
+      
         $post = GraduationApplicants::create($request->all());
 
         return response()->json([
