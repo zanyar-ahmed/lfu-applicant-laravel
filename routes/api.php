@@ -23,8 +23,8 @@ use App\Http\Controllers\GraduationApplicantsController;
 Route::post('register', [PassportAuthController::class, 'register']);
 Route::post('login', [PassportAuthController::class, 'login']);
 //Route::post('posts', [PostController::class, 'store']);
-//Route::post('addapplicant',  [ApplicantController::class, 'store']);
-Route::get('delete',  [ApplicantController::class, 'destroy']);
+Route::post('addapplicant',  [ApplicantController::class, 'store']);
+//Route::get('delete',  [ApplicantController::class, 'destroy']);
 Route::get('getapplicant',  [ApplicantController::class, 'index']);// pangantion
 //Route::get('getapplicant',  [ApplicantController::class, 'index']);// pangantion
 //Route::apiResource('posts', ApplicantController::class);
