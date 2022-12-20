@@ -18,12 +18,17 @@ use App\Http\Controllers\GraduationApplicantsController;
 | is assigned the "api" middleware group. Enjoy building your API!
 |
 */
+
 // login and regster 
 Route::post('register', [PassportAuthController::class, 'register']);
 Route::post('login', [PassportAuthController::class, 'login']);
 //Route::post('posts', [PostController::class, 'store']);
-Route::post('addapplicant',  [ApplicantController::class, 'store']);
+//Route::post('addapplicant',  [ApplicantController::class, 'store']);
+Route::get('delete',  [ApplicantController::class, 'destroy']);
 Route::get('getapplicant',  [ApplicantController::class, 'index']);// pangantion
+//Route::get('getapplicant',  [ApplicantController::class, 'index']);// pangantion
+//Route::apiResource('posts', ApplicantController::class);
+
 //ApplicantController
 Route::post('adddepartment',  [DepramentsController::class, 'store']);
 Route::get('getdepartment',  [DepramentsController::class, 'index']);
@@ -39,9 +44,13 @@ Route::post('addgraduationapplicant', [GraduationApplicantsController::class, 's
 Route::get('getgraduationapplicant',  [GraduationApplicantsController::class, 'index']);
 ///
 
+Route::apiResource('apllicants', ApplicantController::class)->middleware('auth:api');
 
 //Route::post('addapplicant',  [PostController::class, 'store']);
 //Route::resource('posts', PostController::class);
 Route::middleware('auth:api')->group(function () {
-   // Route::resource('posts', PostController::class);
+  // Route::get('getapplicant',  [ApplicantController::class, 'index']);
+   //Route::get('getapplicantbyid',  [ApplicantController::class, 'show']);
+  // Route::resource('products', [ApplicantController::class]);
+
 });

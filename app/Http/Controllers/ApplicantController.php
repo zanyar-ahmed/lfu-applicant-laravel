@@ -15,11 +15,18 @@ class ApplicantController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
-        
-        $posts = Applicant::paginate(15);
+        // $id=$request->input('id');
 
+        // if($id!=""){
+        //     $posts = Applicant::where('id',$id)->get();
+
+        // }
+        // else{
+        //     
+        // }
+        $posts = Applicant::paginate(15);
         return response()->json([
             'status' => true,
             'posts' => $posts
@@ -78,7 +85,15 @@ class ApplicantController extends Controller
      */
     public function show(Applicant $applicant)
     {
-        // 
+        $product = Applicant::find('12');
+if (is_null($product)) {
+return $this->sendError('Applicant not found.');
+}
+return response()->json([
+"success" => true,
+"message" => "Product retrieved successfully.",
+"data" => $product
+]);
     }
 
 
@@ -127,8 +142,10 @@ class ApplicantController extends Controller
      * @param  \App\Models\Applicant  $applicant
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Applicant $applicant)
+    public function destroy(Applicant $applicant, Request $request)
     {
+        $id=$request->input('id');
+        $applicant = Applicant::find($id);
         $applicant->delete();
 
         return response()->json([
