@@ -47,6 +47,7 @@ class DepramentsController extends Controller
 
         $post = depraments::create($request->all());
 
+
         return response()->json([
             'status' => true,
             'message' => "department Created successfully!",
