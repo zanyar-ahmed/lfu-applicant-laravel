@@ -15,7 +15,7 @@ class GraduationRoundsController extends Controller
     public function index()
     {
         
-        $posts = GraduationRounds::paginate(15);
+        $posts = GraduationRounds::all();
 
         return response()->json([
             'status' => true,
