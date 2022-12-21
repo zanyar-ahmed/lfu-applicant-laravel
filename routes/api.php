@@ -45,10 +45,10 @@ Route::get('getgraduationapplicant',  [GraduationApplicantsController::class, 'i
 ///
 
 Route::apiResource('apllicants', ApplicantController::class)->middleware('auth:api');
-Route::apiResource('departments', ApplicantController::class)->middleware('auth:api');
-Route::apiResource('graduationreq', ApplicantController::class)->middleware('auth:api');
-Route::apiResource('graduationround', ApplicantController::class)->middleware('auth:api');
-Route::apiResource('raduationapplicant', ApplicantController::class)->middleware('auth:api');
+Route::apiResource('departments', DepramentsController::class)->middleware('auth:api');
+Route::apiResource('graduationreq', GraduwationRequirementController::class)->middleware('auth:api');
+Route::apiResource('graduationround', GraduationRoundsController::class)->middleware('auth:api');
+Route::apiResource('raduationapplicant', GraduationApplicantsController::class)->middleware('auth:api');
 //Route::apiResource('apllicants', ApplicantController::class)->middleware('auth:api');
 
 //Route::post('addapplicant',  [PostController::class, 'store']);
