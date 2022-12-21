@@ -85,7 +85,7 @@ class ApplicantController extends Controller
      */
     public function show(Applicant $applicant)
     {
-        $product = Applicant::find('12');
+        $product = Applicant::find($applicant);
 if (is_null($product)) {
 return $this->sendError('Applicant not found.');
 }
