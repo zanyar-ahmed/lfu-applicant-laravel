@@ -25,23 +25,23 @@ Route::post('login', [PassportAuthController::class, 'login']);
 //Route::post('posts', [PostController::class, 'store']);
 Route::post('addapplicant',  [ApplicantController::class, 'store']);
 //Route::get('delete',  [ApplicantController::class, 'destroy']);
-Route::get('getapplicant',  [ApplicantController::class, 'index']);// pangantion
+//Route::get('getapplicant',  [ApplicantController::class, 'index']);// pangantion
 //Route::get('getapplicant',  [ApplicantController::class, 'index']);// pangantion
 //Route::apiResource('posts', ApplicantController::class);
 
 //ApplicantController
-Route::post('adddepartment',  [DepramentsController::class, 'store']);
+//Route::post('adddepartment',  [DepramentsController::class, 'store']);
 Route::get('getdepartment',  [DepramentsController::class, 'index']);
 //
 //
-Route::post('addgraduationreq',  [GraduwationRequirementController::class, 'store']);
+//Route::post('addgraduationreq',  [GraduwationRequirementController::class, 'store']);
 Route::get('getgraduationreq',  [GraduwationRequirementController::class, 'index']);
 //
-Route::post('addgraduationround',  [GraduationRoundsController::class, 'store']);
+//Route::post('addgraduationround',  [GraduationRoundsController::class, 'store']);
 Route::get('getgraduationround',  [GraduationRoundsController::class, 'index']);
 //
 Route::post('addgraduationapplicant', [GraduationApplicantsController::class, 'store']);
-Route::get('getgraduationapplicant',  [GraduationApplicantsController::class, 'index']);
+//Route::get('getgraduationapplicant',  [GraduationApplicantsController::class, 'index']);
 ///
 
 Route::apiResource('apllicants', ApplicantController::class)->middleware('auth:api');
