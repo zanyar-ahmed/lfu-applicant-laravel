@@ -83,17 +83,20 @@ class ApplicantController extends Controller
      * @param  \App\Models\Applicant  $applicant
      * @return \Illuminate\Http\Response
      */
-    public function show(Applicant $applicant)
+    public function show( $applicant)
     {
+
         $product = Applicant::find($applicant);
-if (is_null($product)) {
-return $this->sendError('Applicant not found.');
-}
+        if (is_null($product)) {
+        return $this->sendError('Applicant not found.');
+        }
 return response()->json([
 "success" => true,
-"message" => "Product retrieved successfully.",
+"message" => "student retrieved successfully.",
 "data" => $product
 ]);
+
+
     }
 
 
@@ -144,8 +147,8 @@ return response()->json([
      */
     public function destroy(Applicant $applicant, Request $request)
     {
-        $id=$request->input('id');
-        $applicant = Applicant::find($id);
+       // $id=$request->input('id');
+        $applicant = Applicant::find($request);
         $applicant->delete();
 
         return response()->json([

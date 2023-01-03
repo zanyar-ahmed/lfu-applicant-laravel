@@ -37,11 +37,11 @@ Route::get('getdepartment',  [DepramentsController::class, 'index']);
 //Route::post('addgraduationreq',  [GraduwationRequirementController::class, 'store']);
 Route::get('getgraduationreq',  [GraduwationRequirementController::class, 'index']);
 //
-//Route::post('addgraduationround',  [GraduationRoundsController::class, 'store']);
+Route::post('addgraduationround',  [GraduationRoundsController::class, 'store']);
 Route::get('getgraduationround',  [GraduationRoundsController::class, 'index']);
 //
 Route::post('addgraduationapplicant', [GraduationApplicantsController::class, 'store']);
-//Route::get('getgraduationapplicant',  [GraduationApplicantsController::class, 'index']);
+Route::get('getgraduationapplicant',  [GraduationApplicantsController::class, 'index']);
 ///
 
 Route::apiResource('apllicants', ApplicantController::class)->middleware('auth:api');

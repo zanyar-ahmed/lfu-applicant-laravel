@@ -79,9 +79,17 @@ class GraduationApplicantsController extends Controller
      * @param  \App\Models\GraduationApplicants  $graduationApplicants
      * @return \Illuminate\Http\Response
      */
-    public function show(GraduationApplicants $graduationApplicants)
+    public function show( $graduationApplicants)
     {
-        //
+        $product = GraduationApplicants::find($applicant);
+        if (is_null($product)) {
+        return $this->sendError('Applicant not found.');
+        }
+return response()->json([
+"success" => true,
+"message" => "GraduationApplicants retrieved successfully.",
+"data" => $product
+]);
     }
 
     /**

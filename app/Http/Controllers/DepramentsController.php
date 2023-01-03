@@ -62,9 +62,18 @@ class DepramentsController extends Controller
      * @param  \App\Models\depraments  $depraments
      * @return \Illuminate\Http\Response
      */
-    public function show(depraments $depraments)
+    public function show( $depraments)
     {
-        //
+        
+        $product = depraments::find($applicant);
+        if (is_null($product)) {
+        return $this->sendError('Applicant not found.');
+        }
+return response()->json([
+"success" => true,
+"message" => "Deparment retrieved successfully.",
+"data" => $product
+]);
     }
 
     /**
