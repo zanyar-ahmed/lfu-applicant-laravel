@@ -65,7 +65,7 @@ class DepramentsController extends Controller
     public function show( $depraments)
     {
         
-        $product = depraments::find($applicant);
+        $product = depraments::find($depraments);
         if (is_null($product)) {
         return $this->sendError('Applicant not found.');
         }

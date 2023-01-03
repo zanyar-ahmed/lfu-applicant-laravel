@@ -48,7 +48,7 @@ Route::apiResource('apllicants', ApplicantController::class)->middleware('auth:a
 Route::apiResource('departments', DepramentsController::class)->middleware('auth:api');
 Route::apiResource('graduationreq', GraduwationRequirementController::class)->middleware('auth:api');
 Route::apiResource('graduationround', GraduationRoundsController::class)->middleware('auth:api');
-Route::apiResource('raduationapplicant', GraduationApplicantsController::class)->middleware('auth:api');
+Route::apiResource('graduationapplicant', GraduationApplicantsController::class)->middleware('auth:api');
 //Route::apiResource('apllicants', ApplicantController::class)->middleware('auth:api');
 
 //Route::post('addapplicant',  [PostController::class, 'store']);

@@ -81,7 +81,7 @@ class GraduationApplicantsController extends Controller
      */
     public function show( $graduationApplicants)
     {
-        $product = GraduationApplicants::find($applicant);
+        $product = GraduationApplicants::find($graduationApplicants);
         if (is_null($product)) {
         return $this->sendError('Applicant not found.');
         }
