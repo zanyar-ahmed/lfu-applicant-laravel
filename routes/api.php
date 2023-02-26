@@ -20,7 +20,7 @@ use App\Http\Controllers\GraduationApplicantsController;
 */
 
 // login and regster 
-//Route::post('register', [PassportAuthController::class, 'register']);
+Route::post('register', [PassportAuthController::class, 'register']);
 Route::post('login', [PassportAuthController::class, 'login']);
 //Route::post('posts', [PostController::class, 'store']);
 Route::post('addapplicant',  [ApplicantController::class, 'store']);
