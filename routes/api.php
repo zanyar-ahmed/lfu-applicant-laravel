@@ -20,7 +20,7 @@ use App\Http\Controllers\GraduationApplicantsController;
 */
 
 // login and regster 
-Route::post('register', [PassportAuthController::class, 'register']);
+//Route::post('register', [PassportAuthController::class, 'register']);
 Route::post('login', [PassportAuthController::class, 'login']);
 //Route::post('posts', [PostController::class, 'store']);
 Route::post('addapplicant',  [ApplicantController::class, 'store']);
@@ -28,12 +28,11 @@ Route::post('addapplicant',  [ApplicantController::class, 'store']);
 //Route::get('getapplicant',  [ApplicantController::class, 'index']);// pangantion
 //Route::get('getapplicant',  [ApplicantController::class, 'index']);// pangantion
 //Route::apiResource('posts', ApplicantController::class);
-
+//zanyar
 //ApplicantController
 //Route::post('adddepartment',  [DepramentsController::class, 'store']);
 Route::get('getdepartment',  [DepramentsController::class, 'index']);
-//
-//
+
 //Route::post('addgraduationreq',  [GraduwationRequirementController::class, 'store']);
 Route::get('getgraduationreq',  [GraduwationRequirementController::class, 'index']);
 //
